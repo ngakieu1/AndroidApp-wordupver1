@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "404565945536",
+    "project_id": "wordup-9e61a",
+    "storage_bucket": "wordup-9e61a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:404565945536:android:a9f15884a821243cd61125",
+        "android_client_info": {
+          "package_name": "com.example.wordup"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsc-fMHxZXzcZcZd6zZLJd5NrvBitwLFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
