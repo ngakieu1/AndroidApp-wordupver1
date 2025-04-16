@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Word Up</string>
+
+    <string name="pack_vocabs">Animals</string>
+    <string-array name="category_vocab">
+        <item>Animals</item>
+        <item>Weather</item>
+        <item>Color Idioms</item>
+        <item>Colours</item>
+        <item>Clothes</item>
+        <item>Numbers</item>
+        <item>Vehicles</item>
+        <item>Technologies</item>
+    </string-array>
+</resources>
