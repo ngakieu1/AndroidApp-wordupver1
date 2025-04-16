@@ -16,10 +16,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.wordup.MainActivity;
 import com.example.wordup.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
     private TextView appName;
+    FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,19 +32,18 @@ public class SplashScreenActivity extends AppCompatActivity {
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.myanim);
         appName.setAnimation(anim);
 
-        new Thread(){
-            @Override
-            public void run(){
-                try {
-                    sleep(3000);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-                Intent intent = new Intent(SplashScreenActivity.this, MainActivity.class);
-                startActivity(intent);
-                SplashScreenActivity.this.finish();
+        firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+        new Handler().postDelayed(() -> {
+            if (currentUser == null) {
+
+                startActivity(new Intent(SplashScreenActivity.this, Register.class));
+            } else {
+
+                startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
             }
-        }.start();
+            finish();
+        }, 3000);
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
