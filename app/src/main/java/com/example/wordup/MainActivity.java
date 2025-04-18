@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 //import com.example.wordup.Activities.QuestionActivity;
+import com.example.wordup.Activities.Account;
 import com.example.wordup.Adapters.PackAdapter;
 import com.example.wordup.Models.PackModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -27,23 +28,6 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
 
     private BottomNavigationView bottomNavigationView;
     private CardView animals, weather, idioms, colours;
-
-    private final NavigationBarView.OnItemSelectedListener onItemSelectedListener =
-            new NavigationBarView.OnItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                    int itemId = menuItem.getItemId();
-                    if (itemId == R.id.nav_home) {
-                        // Handle home selection
-                        return true;
-                    } else if (itemId == R.id.nav_account) {
-                        // Handle account selection
-                        return true;
-                    }
-                    return false;
-                }
-            };
-
     ArrayList<PackModel> packModels = new ArrayList<>();
 
     int[] packImages = {R.drawable.whale, R.drawable.cloudy, R.drawable.languages, R.drawable.colour, R.drawable.clothes, R.drawable.numbers, R.drawable.car, R.drawable.technology};
@@ -54,12 +38,29 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
         setContentView(R.layout.activity_main);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        bottomNavigationView = findViewById(R.id.bottomNav);
 
         setUpPackModels();
 
         PackAdapter adapter = new PackAdapter(this, packModels, this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        //  Set BottomNavigationView listener properly here — not nested!
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.nav_home) {
+                    // Already on home, no action needed
+                    return true;
+                } else if (itemId == R.id.nav_account) {
+                    startActivity(new Intent(MainActivity.this, Account.class));
+                    return true;
+                }
+                return false;
+            }
+        });
     }
         private void setUpPackModels() {
             String[] packVocabs = getResources().getStringArray(R.array.category_vocab);
@@ -68,46 +69,17 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
             }
         }
 
-    @Override
-    public void onItemClick(int position) {
+        @Override
+        public void onItemClick(int position) {
 
-        Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-
-
-        intent.putExtra("VOCAB", packModels.get(position).getPackName());
-        intent.putExtra("IMAGE", packModels.get(position).getImage());
-        intent.putExtra("category", packModels.get(position).getPackName());
-
-        startActivity(intent);
-    }
+            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
 
 
-//        // Set up bottom navigation with the new listener
-//        bottomNavigationView.setOnItemSelectedListener(onItemSelectedListener);
-//
-//        // Set click listeners for cards
-//        animals.setOnClickListener(view -> startQuestionActivity("animals"));
-//        weather.setOnClickListener(view -> startQuestionActivity("weather"));
-//        idioms.setOnClickListener(view -> startQuestionActivity("idioms"));
-//        colours.setOnClickListener(view -> startQuestionActivity("colours"));
-//
-//        // Edge-to-edge handling
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main_recycler_view), (v, insets) -> {
-//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-//            return insets;
-//        });
-//    }
-//
-//    private void startQuestionActivity(String category) {
-//        Intent intent = new Intent(MainActivity.this, QuestionActivity.class);
-//        intent.putExtra("category", category);
-//        startActivity(intent);
-//    }
-//
-//    @Override
-//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//        // Handle navigation view item clicks here if needed
-//        return false;
-//    }
+            intent.putExtra("VOCAB", packModels.get(position).getPackName());
+            intent.putExtra("IMAGE", packModels.get(position).getImage());
+            intent.putExtra("category", packModels.get(position).getPackName());
+
+            startActivity(intent);
+        }
+
 }
