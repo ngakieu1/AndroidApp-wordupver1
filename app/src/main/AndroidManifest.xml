@@ -14,35 +14,47 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WordUp"
         tools:targetApi="31">
+
+        <activity
+            android:name=".LauncherActivity"
+            android:exported="true"
+            android:theme="@style/Theme.WordUp"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".Activities.Account"
             android:exported="false" />
         <activity
             android:name=".Activities.Account"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
         <activity
             android:name=".Activities.Login"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="false" />
         <activity
             android:name=".Activities.Register"
             android:exported="false" />
         <activity
             android:name=".MainActivity2"
-            android:exported="false" /> <!-- <activity -->
-        <!-- android:name=".Activities.QuestionActivity" -->
-        <!-- android:exported="false" /> -->
+            android:exported="false" />
+        <!-- Nếu cần giữ SplashScreenActivity, vẫn có thể dùng sau Launcher -->
         <activity
             android:name=".Activities.SplashScreenActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />
+        <activity
+            android:name=".TwoPane.MainActivity"
+            android:exported="true" />
+        <activity android:name=".TwoPane.QuestionActivity" />
+
 
         <meta-data
             android:name="preloaded_fonts"
