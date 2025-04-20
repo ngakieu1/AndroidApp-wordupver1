@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Sign In"
+        android:text="@string/signin"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.462"
@@ -45,7 +45,7 @@
         android:background="@color/white"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:text="Email"
+        android:hint="@string/email_hint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -62,7 +62,7 @@
         android:layout_marginEnd="24dp"
         android:background="@color/white"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/password_hint"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,7 +75,7 @@
         android:id="@+id/signin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign In"
+        android:text="@string/signin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:text="New here? Create Account"
+        android:text="@string/sign_here"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -105,6 +105,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signhere"
         app:layout_constraintVertical_bias="0.16" />
-
-<!--    command a-->
 </androidx.constraintlayout.widget.ConstraintLayout>

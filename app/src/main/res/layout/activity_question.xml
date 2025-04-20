@@ -90,7 +90,7 @@
         android:layout_height="29dp"
         android:layout_marginTop="88dp"
         android:gravity="center"
-        android:text="Animals"
+        android:text="@string/animals"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"

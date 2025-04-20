@@ -1,0 +1,43 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Word Up</string>
+
+    <string name="pack_vocabs">Animales</string>
+
+    <!-- Define individual strings for each category -->
+    <string name="animals" translatable="false">Animales</string>
+    <string name="weather" translatable="false">Clima</string>
+    <string name="color_idioms" translatable="false">Modismos de color</string>
+    <string name="colours" translatable="false">Colores</string>
+    <string name="clothes" translatable="false">Ropa</string>
+    <string name="numbers" translatable="false">Números</string>
+    <string name="vehicles" translatable="false">Vehículos</string>
+    <string name="technologies" translatable="false">Tecnologías</string>
+
+    <!-- Define the category_vocab array using string references -->
+    <string-array name="category_vocab">
+        <item>@string/animals</item>
+        <item>@string/weather</item>
+        <item>@string/color_idioms</item>
+        <item>@string/colours</item>
+        <item>@string/clothes</item>
+        <item>@string/numbers</item>
+        <item>@string/vehicles</item>
+        <item>@string/technologies</item>
+    </string-array>
+
+    <string name="user_name">Nombre de usuario</string>
+    <string name="language">Idioma</string>
+    <string name="log_out">Cerrar sesión</string>
+    <string name="home">Inicio</string>
+    <string name="english">Inglés</string>
+    <string name="vietnamese">Vietnamita</string>
+    <string name="signin" translatable="false">Iniciar sesión</string>
+    <string name="email_hint" translatable="false">Correo electrónico</string>
+    <string name="password_hint" translatable="false">Contraseña</string>
+    <string name="sign_here" translatable="false">¿Nuevo aquí? Crear cuenta</string>
+    <string name="create_account" translatable="false">Crear una cuenta nueva</string>
+    <string name="name_hint" translatable="false">Nombre</string>
+    <string name="confirm_password_hint" translatable="false">Confirmar contraseña</string>
+    <string name="register_btn" translatable="false">Registrar</string>
+    <string name="res_here" translatable="false">¿Ya estás registrado? Iniciar sesión aquí</string>
+</resources>

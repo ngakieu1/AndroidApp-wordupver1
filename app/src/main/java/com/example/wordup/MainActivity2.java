@@ -1,5 +1,7 @@
 package com.example.wordup;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -15,7 +17,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.SavedStateHandle;
 
+import com.example.wordup.Activities.Login;
 import com.example.wordup.Models.QuestionModel;
 
 import java.util.ArrayList;
@@ -32,6 +36,17 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences preferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
+        boolean isLoggedIn = preferences.getBoolean("isLoggedIn", false);
+        if (!isLoggedIn) {
+            // Redirect to login activity
+            Intent intent = new Intent(MainActivity2.this, Login.class);
+            startActivity(intent);
+            finish();
+            return;
+        }
+
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_question);
 
@@ -76,12 +91,16 @@ public class MainActivity2 extends AppCompatActivity {
     private void loadQuestions(String category){
         switch(category){
             case "Animals":
+            case "Animales":
+            case "Động Vật":
                 questionModels.add(new QuestionModel("hippopotamus", "/ˌhɪp.əˈpɒt.ə.məs/",
                         new int[]{R.drawable.hippo, R.drawable.whale}, 0, R.raw.hippopotamus));
                 questionModels.add(new QuestionModel("zebra", "/ˈziː.brə/",
                         new int[]{R.drawable.tiger, R.drawable.zebra}, 1, R.raw.zebra));
                 break;
             case "Weather":
+            case "Clima":
+            case "Thời tiết":
                 questionModels.add(new QuestionModel("downpour", "/ˈdaʊn.pɔːr/",
                         new int[]{R.drawable.downpour, R.drawable.clothes}, 0, R.raw.downpour));
                 questionModels.add(new QuestionModel("gale", "/ɡeɪl/",
@@ -92,7 +111,6 @@ public class MainActivity2 extends AppCompatActivity {
                 break;
         }
     }
-
     private void showQuestion(int index){
         QuestionModel q = questionModels.get(index);
         questionText.setText(q.getWord());
@@ -107,7 +125,7 @@ public class MainActivity2 extends AppCompatActivity {
             Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
         }
         else{
-            Toast.makeText(this, "Try again!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Wrong! Try again!", Toast.LENGTH_SHORT).show();
         }
     }
     private void playSound() {

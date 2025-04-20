@@ -1,15 +1,43 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Word Up</string>
 
     <string name="pack_vocabs">Animals</string>
+
+    <!-- Define individual strings for each category -->
+    <string name="animals" translatable="false">Animals</string>
+    <string name="weather" translatable="false">Weather</string>
+    <string name="color_idioms" translatable="false">Color Idioms</string>
+    <string name="colours" translatable="false">Colours</string>
+    <string name="clothes" translatable="false">Clothes</string>
+    <string name="numbers" translatable="false">Numbers</string>
+    <string name="vehicles" translatable="false">Vehicles</string>
+    <string name="technologies" translatable="false">Technologies</string>
+
+    <!-- Define the category_vocab array using string references -->
     <string-array name="category_vocab">
-        <item>Animals</item>
-        <item>Weather</item>
-        <item>Color Idioms</item>
-        <item>Colours</item>
-        <item>Clothes</item>
-        <item>Numbers</item>
-        <item>Vehicles</item>
-        <item>Technologies</item>
+        <item>@string/animals</item>
+        <item>@string/weather</item>
+        <item>@string/color_idioms</item>
+        <item>@string/colours</item>
+        <item>@string/clothes</item>
+        <item>@string/numbers</item>
+        <item>@string/vehicles</item>
+        <item>@string/technologies</item>
     </string-array>
+
+    <string name="user_name">User Name</string>
+    <string name="language">Language</string>
+    <string name="log_out">Log Out</string>
+    <string name="home">Home</string>
+    <string name="english">English</string>
+    <string name="vietnamese">Vietnamese</string>
+    <string name="signin" translatable="false">Sign In</string>
+    <string name="email_hint" translatable="false">Email</string>
+    <string name="password_hint" translatable="false">Password</string>
+    <string name="sign_here" translatable="false">New here? Create Account</string>
+    <string name="create_account" translatable="false">Create New Account</string>
+    <string name="name_hint" translatable="false">Name</string>
+    <string name="confirm_password_hint" translatable="false">Confirm Password</string>
+    <string name="register_btn" translatable="false">Register</string>
+    <string name="res_here" translatable="false">Already Registered? Login Here</string>
 </resources>
