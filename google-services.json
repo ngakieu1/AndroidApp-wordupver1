@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "505945428566",
+    "project_id": "susois",
+    "storage_bucket": "susois.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:505945428566:android:b57fb0eac1d831fa56e1f7",
+        "android_client_info": {
+          "package_name": "com.example.wordup"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOXHB2-3o7IhvfDzzQZdrgm1xuc6eD5_0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

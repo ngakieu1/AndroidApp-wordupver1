@@ -48,6 +48,18 @@
         android:layout_marginBottom="32dp"/>
 
     <Button
+        android:id="@+id/btnShareFacebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chia sẻ thành tích lên Facebook"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHome"
+        app:layout_constraintVertical_bias="0.495" />
+
+    <Button
         android:id="@+id/btnLogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -71,6 +83,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvLanguage"
         app:layout_constraintVertical_bias="0.203" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

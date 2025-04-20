@@ -151,7 +151,7 @@ public class QuestionFragment extends Fragment {
 
             toast.setGravity(Gravity.TOP | Gravity.START,
                     x + width / 2 - 80,
-                    y + height + 200);
+                    y + height + 300);
 
             toast.show();
         });

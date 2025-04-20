@@ -10,6 +10,7 @@ public class LauncherActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         DisplayMetrics metrics = getResources().getDisplayMetrics();
         float widthDp = metrics.widthPixels / metrics.density;
 

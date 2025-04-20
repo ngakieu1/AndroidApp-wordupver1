@@ -19,6 +19,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.wordup.MainActivity;
 import com.example.wordup.R;
+import com.example.wordup.ShareHepler.ShareHelper;
 
 public class Account extends AppCompatActivity {
 
@@ -82,6 +83,14 @@ public class Account extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
+        });
+
+        Button btnShare = findViewById(R.id.btnShareFacebook);
+        btnShare.setOnClickListener(v -> {
+            ShareHelper shareHelper = new ShareHelper(Account.this);
+//            shareHelper.shareScore(playerName, score);
+            shareHelper.shareScore("Su", 100 );
+
         });
 
     }

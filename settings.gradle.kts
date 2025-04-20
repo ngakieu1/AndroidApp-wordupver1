@@ -16,8 +16,12 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url = uri("https://maven.facebook.com")
+        }
     }
 }
+
 
 rootProject.name = "WordUp"
 include(":app")

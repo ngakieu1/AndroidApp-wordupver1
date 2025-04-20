@@ -12,4 +12,5 @@
         <item>Vehicles</item>
         <item>Technologies</item>
     </string-array>
+    <string name="facebook_app_id">1236874767837604</string>
 </resources>
