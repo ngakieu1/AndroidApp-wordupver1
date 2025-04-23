@@ -1,5 +1,9 @@
 package com.example.wordup.TwoPane;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -20,6 +24,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.wordup.Activities.LocaleHelper;
 import com.example.wordup.Models.QuestionModel;
 import com.example.wordup.R;
 
@@ -38,6 +43,7 @@ public class QuestionFragment extends Fragment {
     private int currentQuestionIndex = 0;
 
     public QuestionFragment() {}
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -119,10 +125,6 @@ public class QuestionFragment extends Fragment {
         imageOption2.setImageResource(images[1]);
     }
 
-
-
-
-
     private void showToastBelowNextButton(String message) {
         View nextButton = getView().findViewById(R.id.btn_next); // ID của nút Next
         if (nextButton == null) return;
@@ -166,13 +168,6 @@ public class QuestionFragment extends Fragment {
             showToastBelowNextButton("Wrong! ");
         }
     }
-
-
-
-
-
-
-
 
 
 

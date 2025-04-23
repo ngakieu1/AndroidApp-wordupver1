@@ -8,21 +8,6 @@
     android:background="@drawable/question_back"
     tools:context=".TwoPane.QuestionFragment">
 
-    <TextView
-        android:id="@+id/correct_answer"
-        android:layout_width="65dp"
-        android:layout_height="17dp"
-        android:layout_marginTop="116dp"
-        android:gravity="center"
-        android:text="1/10"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.235"
-        app:layout_constraintStart_toEndOf="@+id/category_title"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/optionContainer"
         android:layout_width="739dp"
@@ -95,7 +80,7 @@
         android:layout_height="29dp"
         android:layout_marginTop="88dp"
         android:gravity="center"
-        android:text="Animals"
+        android:text="@string/animals"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"

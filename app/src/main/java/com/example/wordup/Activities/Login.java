@@ -1,5 +1,6 @@
 package com.example.wordup.Activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -25,6 +26,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Objects;
+
 public class Login extends AppCompatActivity {
 
     EditText mEmail, mPassword;
@@ -32,6 +35,14 @@ public class Login extends AppCompatActivity {
     Button mloginBtn;
     FirebaseAuth firebaseAuth;
     ProgressBar progressBar;
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        SharedPreferences preferences = newBase.getSharedPreferences("user_prefs", MODE_PRIVATE);
+        String lang = preferences.getString("language", "en");
+        Context context = LocaleHelper.setLocale(newBase, lang);
+        super.attachBaseContext(context);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,12 +92,13 @@ public class Login extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         }
                         else{
-                            Toast.makeText(Login.this, "Error!"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, "Error!"+ Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);
                         }
                     }
                 });
             }
+
         });
 
         mregisterbtn.setOnClickListener(new View.OnClickListener(){
@@ -95,6 +107,26 @@ public class Login extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), Register.class));
             }
         });
+
+        TextView forgotPassword = findViewById(R.id.forgot_pass);
+
+        forgotPassword.setOnClickListener(v -> {
+            String email = mEmail.getText().toString().trim();
+            if (TextUtils.isEmpty(email)) {
+                mEmail.setError("Vui lòng nhập email để đặt lại mật khẩu");
+                return;
+            }
+
+            firebaseAuth.sendPasswordResetEmail(email)
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(Login.this, "Đã gửi email đặt lại mật khẩu.", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(Login.this, "Không thể gửi email: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    });
+        });
+
 
     }
 }

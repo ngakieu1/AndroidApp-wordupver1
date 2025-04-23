@@ -1,5 +1,6 @@
 package com.example.wordup;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
@@ -19,6 +20,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.SavedStateHandle;
 
+import com.example.wordup.Activities.LocaleHelper;
 import com.example.wordup.Activities.Login;
 import com.example.wordup.Models.QuestionModel;
 
@@ -33,6 +35,14 @@ public class MainActivity2 extends AppCompatActivity {
     private ImageButton imageOption1, imageOption2;
     List<QuestionModel> questionModels = new ArrayList<>();
     int currentQuestionIndex = 0;
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        SharedPreferences preferences = newBase.getSharedPreferences("user_prefs", MODE_PRIVATE);
+        String lang = preferences.getString("language", "en");
+        Context context = LocaleHelper.setLocale(newBase, lang);
+        super.attachBaseContext(context);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

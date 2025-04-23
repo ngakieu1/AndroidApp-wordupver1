@@ -1,6 +1,8 @@
 package com.example.wordup.Activities;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -32,6 +34,14 @@ public class Register extends AppCompatActivity {
     TextView mloginBtn;
     FirebaseAuth firebaseAuth;
     ProgressBar progressBar;
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        SharedPreferences preferences = newBase.getSharedPreferences("user_prefs", MODE_PRIVATE);
+        String lang = preferences.getString("language", "en");
+        Context context = LocaleHelper.setLocale(newBase, lang);
+        super.attachBaseContext(context);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

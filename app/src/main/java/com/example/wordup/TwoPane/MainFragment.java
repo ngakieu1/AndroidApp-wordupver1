@@ -1,70 +1,4 @@
-//package com.example.wordup.TwoPane;
-//
-//import android.os.Bundle;
-//import android.view.LayoutInflater;
-//import android.view.View;
-//import android.view.ViewGroup;
-//
-//import androidx.annotation.NonNull;
-//import androidx.annotation.Nullable;
-//import androidx.fragment.app.Fragment;
-//import androidx.recyclerview.widget.LinearLayoutManager;
-//import androidx.recyclerview.widget.RecyclerView;
-//
-//import com.example.wordup.Adapters.PackAdapter;
-//import com.example.wordup.Models.PackModel;
-//import com.example.wordup.R;
-//import com.example.wordup.RecyclerViewInterface;
-//
-//import java.util.ArrayList;
-//
-//public class MainFragment extends Fragment {
-//
-//    private ArrayList<PackModel> packModels;
-//    private int[] packImages = {
-//            R.drawable.whale, R.drawable.cloudy, R.drawable.languages,
-//            R.drawable.colour, R.drawable.clothes, R.drawable.numbers,
-//            R.drawable.car, R.drawable.technology
-//    };
-//
-//    public MainFragment() {
-//        // Required empty public constructor
-//    }
-//
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//        // Inflate layout chứa RecyclerView cho fragment
-//        return inflater.inflate(R.layout.fragment_main, container, false);
-//    }
-//
-//    @Override
-//    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-//        super.onViewCreated(view, savedInstanceState);
-//
-//        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
-//        packModels = new ArrayList<>();
-//
-//        setUpPackModels();
-//
-//        PackAdapter adapter = new PackAdapter(
-//                requireContext(),
-//                packModels,
-//                (RecyclerViewInterface) requireActivity(),  // Fragment giao tiếp với MainActivity
-//                true // TwoPane mode
-//        );
-//
-//        recyclerView.setAdapter(adapter);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-//    }
-//
-//    private void setUpPackModels() {
-//        String[] packNames = getResources().getStringArray(R.array.category_vocab);
-//        for (int i = 0; i < packNames.length; i++) {
-//            packModels.add(new PackModel(packNames[i], packImages[i]));
-//        }
-//    }
-//}
+
 package com.example.wordup.TwoPane;
 
 import android.os.Bundle;
@@ -98,6 +32,7 @@ public class MainFragment extends Fragment {
     public MainFragment() {
         // Required empty public constructor
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -141,6 +76,7 @@ public class MainFragment extends Fragment {
             return false;
         });
     }
+
 
 
     private void setUpPackModels() {

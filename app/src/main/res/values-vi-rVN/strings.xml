@@ -1,0 +1,47 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Word Up</string>
+    <string name="pack_vocabs">Động vật</string>
+    <!-- Define individual strings for each category -->
+    <string name="animals" translatable="false">Động vật</string>
+    <string name="weather" translatable="false">Thời tiết</string>
+    <string name="color_idioms" translatable="false">Idiom về màu sắc</string>
+    <string name="colours" translatable="false">Màu sắc</string>
+    <string name="clothes" translatable="false">Quần áo</string>
+    <string name="numbers" translatable="false">Số học</string>
+    <string name="vehicles" translatable="false">Phương tiện</string>
+    <string name="technologies" translatable="false">Công nghệ</string>
+    <!-- Define the category_vocab array using string references -->
+    <string-array name="category_vocab" tools:ignore="InconsistentArrays">
+        <item>@string/animals</item>
+        <item>@string/weather</item>
+        <item>@string/color_idioms</item>
+        <item>@string/colours</item>
+        <item>@string/clothes</item>
+        <item>@string/numbers</item>
+        <item>@string/vehicles</item>
+        <item>@string/technologies</item>
+    </string-array>
+    <string name="user_name">Tên người dùng</string>
+    <string name="language">Ngôn ngữ</string>
+    <string name="log_out">Đăng xuất</string>
+    <string name="home">Trang chủ</string>
+    <string name="english">Tiếng Anh</string>
+    <string name="vietnamese">Tiếng Việt</string>
+    <string name="signin" translatable="false">Đăng nhập</string>
+    <string name="email_hint" translatable="false">Email</string>
+    <string name="password_hint" translatable="false">Mật khẩu</string>
+    <string name="sign_here" translatable="false">Tạo tài khoản mới ở đây !</string>
+    <string name="create_account" translatable="false">Tạo tài khoản mới</string>
+    <string name="name_hint" translatable="false">Tên</string>
+    <string name="confirm_password_hint" translatable="false">Xác nhận mật khẩu</string>
+    <string name="register_btn" translatable="false">Đăng ký</string>
+    <string name="res_here" translatable="false">Đã đăng ký? Đăng nhập tại đây</string>
+    <string name="share" translatable="false">Chia sẻ</string>
+    <string name="internet" translatable="false">Không có kết nối mạng. Vui lòng kiểm tra lại!</string>
+    <string name="i_am" translatable="false">Tôi là </string>
+    <string name="have_achieved" translatable="false">và tôi đã đạt được </string>
+    <string name="points" translatable="false">điểm trong WordUp! </string>
+    <string name="next" translatable="false">Tiếp theo</string>
+    <string name="forgot_password" translatable="false">Quên mật khẩu ?</string>
+    <string name="facebook_app_id">1236874767837604</string>
+</resources>
